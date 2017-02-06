@@ -244,3 +244,16 @@ console.log("///////////////////////////SECTION8////////////////////////////////
 // Section 8
 
 // Assign a variable myPerson to a hash, giving them a name, height, favourite food and an eat method
+
+var myPerson = {
+                name: "Blaise",
+                height: 182,
+                favourite_food: "beef",
+
+                eat: function(){
+                  return "I am eating " + this.favourite_food;
+                } 
+              }
+
+  console.log(myPerson.eat());
+

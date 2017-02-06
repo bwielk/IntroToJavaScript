@@ -137,12 +137,15 @@ type: 'personal'
 
 // Write functions for the following tasks!
 // 7.1 Calculate the total cash in accounts
-total = 0;
-for(i = 0; i < accounts.length; i++){
-  total += accounts[i].amount;
+function total(array){
+  var total = 0;
+  for(i = 0; i < array.length; i++){
+    total += array[i].amount;
+  }
+  return total;
 }
 
-console.log(total);
+console.log(total(accounts));
 
 // 7.2 Find the amount of money in the account with the largest balance
 
@@ -170,75 +173,71 @@ function accountMinBal(array){
     }
   }
 }
-  console.log(accountMinBal(accounts));
+console.log(accountMinBal(accounts));
 
 // 7.4 Calculate the average bank account value
-  
-  function averageAccountValue(array){
-    var total = 0;
-    for(var element of array){
-      total += element.amount;
-    }
-    return total/array.length;
-  }
 
-  console.log(averageAccountValue(accounts));
+function averageAccountValue(array){
+  return total(array)/array.length;
+}
+
+console.log(averageAccountValue(accounts));
 
 // 7.5 Find the value of marcs bank account
 
-  function findValuesByNames(array, name){
-    for(var element of array){
-      if(element.name === name.toLowerCase()){
-        return element.amount;
-      }
+function findValuesByNames(array, name){
+  for(var element of array){
+    if(element.name === name.toLowerCase()){
+      return element.amount;
     }
   }
+}
 
-  console.log(findValuesByNames(accounts, "Marc"));
+console.log(findValuesByNames(accounts, "Marc"));
 
 // 7.6 Find the holder of the largest bank account
-  
-  function theRichestGuy(array){
-    var max = maxValue(array);
-    for(var element of array){
-      if(element.amount === max)
-        return element.name;
-    }
-  }
 
-  console.log(theRichestGuy(accounts));
+function theRichestGuy(array){
+  var max = maxValue(array);
+  for(var element of array){
+    if(element.amount === max)
+      return element.name;
+  }
+}
+
+console.log(theRichestGuy(accounts));
 
 // 7.7 Calculate the total cash in business accounts
-  
-  function totalBusinessAcc(array){
-    var total = 0;
-    for(var element of array){
-      if(element.type === "business"){
-        total += element.amount;
-      }
-    }
-    return total;
-  }
 
-  console.log(totalBusinessAcc(accounts));
+function totalBusinessAcc(array){
+  var total = 0;
+  for(var element of array){
+    if(element.type === "business"){
+      total += element.amount;
+    }
+  }
+  return total;
+}
+
+console.log(totalBusinessAcc(accounts));
 
 // 7.8 Find the largest personal account owner
-  
-  function theRichestPersonalAcc(array){
-    personalValues = [];
-    for(var element of array){
-      if(element.type === "personal")
-        personalValues.push(element.amount);
-    }
-    var max = Math.max.apply(Math, personalValues);
-    for(var element of array){
-      if(element.amount === max){
-        return element.name;
-      }
+
+function theRichestPersonalAcc(array){
+  personalValues = [];
+  for(var element of array){
+    if(element.type === "personal")
+      personalValues.push(element.amount);
+  }
+  var max = Math.max.apply(Math, personalValues);
+  for(var element of array){
+    if(element.amount === max){
+      return element.name;
     }
   }
+}
 
-  console.log(theRichestPersonalAcc(accounts));
+console.log(theRichestPersonalAcc(accounts));
 
 console.log("///////////////////////////SECTION8////////////////////////////////")
 // Section 8
@@ -246,14 +245,14 @@ console.log("///////////////////////////SECTION8////////////////////////////////
 // Assign a variable myPerson to a hash, giving them a name, height, favourite food and an eat method
 
 var myPerson = {
-                name: "Blaise",
-                height: 182,
-                favourite_food: "beef",
+  name: "Blaise",
+  height: 182,
+  favourite_food: "beef",
 
-                eat: function(){
-                  return "I am eating " + this.favourite_food;
-                } 
-              }
+  eat: function(){
+    return "I am eating " + this.favourite_food;
+  } 
+}
 
-  console.log(myPerson.eat());
+console.log(myPerson.eat());
 
